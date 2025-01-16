@@ -21,7 +21,7 @@
   <!-- Navbar -->
   <nav class="navbar" style="background-color: #DF9755;" data-bs-theme="white">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.html">
         <img src="assets/images/icon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         Leet Cook
       </a>
@@ -57,36 +57,41 @@
   <!-- Recipes page -->
   <div class="recipes_section">
     <div id="list" class="container">
-      <h2 style="text-decoration: underline;">
-        Explore new recipes
+      <h2 style="text-decoration: underline; text-align: center; margin-top: 35px;">
+        EXPLORE NEW RECIPES
       </h2>
 
-      <button id="sortButtonZToA" @click>Sort Z → A</button>
-      <button id="sortButtonAToZ">Sort A → Z</button>
+      <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+        onchange="handleSort(this.value)" style="width: 300px;">
+        <option>Sort by name</option>
+        <option value="true">A-Z</option>
+        <option value="false">Z-A</option>
+      </select>
 
-      <div class="row" style="border: 5px solid #DF9755; border-radius: 10px; margin-top: 20px; padding: 10px;">
-       
+      <div class="row row-item"
+        style="border: 5px solid #DF9755; border-radius: 10px; margin-top: 20px; padding: 10px;">
+
         <div class="list_item col-lg-4">
           <div class="card" style="width: 18rem;">
-            <img src="assets/images/roasted_chicken.png" class="card-img-top" alt="roasted_chicken">
+            <img src="assets/images/roasted_chicken/roasted_chicken.png" class="card-img-top" alt="roasted_chicken">
             <div class="card-body">
               <h5 class="card-title">Roasted Chicken</h5>
               <p class="card-text">Roasted chicken never fails to impress, but it's surprisingly simple to make! This
                 juicy roasted chicken recipe is perfect for beginner cooks and old pros alike.</p>
-              <a href="#" class="btn btn-primary">Try it yourself</a>
+              <a href="roasted_chicken.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
         <div class="list_item col-lg-4">
           <div class="card" style="width: 18rem;">
-            <img src="assets/images/chicken_soup.png" class="card-img-top" alt="chicken_soup">
+            <img src="assets/images/chicken_soup/chicken_soup.png" class="card-img-top" alt="chicken_soup">
             <div class="card-body">
               <h5 class="card-title">Chicken Soup</h5>
               <p class="card-text">This chicken noodle soup recipe can be on the table in just 40 minutes! Whether
                 you're feeling under the weather or you're just in need of a little comfort, this comforting soup will
                 warm you up from the inside out.</p>
-              <a href="#" class="btn btn-primary">Try it yourself</a>
+              <a href="chicken_soup.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
@@ -94,48 +99,48 @@
 
         <div class="list_item col-lg-4">
           <div class="card" style="width: 18rem;">
-            <img src="assets/images/egg_rolls.png" class="card-img-top" alt="egg_rolls">
+            <img src="assets/images/egg_rolls/egg_rolls.png" class="card-img-top" alt="egg_rolls">
             <div class="card-body">
               <h5 class="card-title">Egg Rolls</h5>
               <p class="card-text">It's easier than you think to make restaurant-worthy egg rolls in the comfort of your
                 own kitchen. With this top-rated recipe, you'll learn how to make perfect egg rolls.</p>
-              <a href="#" class="btn btn-primary">Try it yourself</a>
+              <a href="egg_rolls.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="list_item col-lg-4">
           <div class="card" style="width: 18rem;">
-            <img src="assets/images/egg_salad.png" class="card-img-top" alt="egg_salad">
+            <img src="assets/images/egg_salad/egg_salad.png" class="card-img-top" alt="egg_salad">
             <div class="card-body">
               <h5 class="card-title">Egg Salad</h5>
               <p class="card-text">Make deli-worthy egg salad sandwiches at home with this top-rated egg salad recipe!
                 You'll come back to it again and again.</p>
-              <a href="#" class="btn btn-primary">Try it yourself</a>
+              <a href="egg_salad.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="list_item col-lg-4">
           <div class="card" style="width: 18rem;">
-            <img src="assets/images/beef_rouladen.png" class="card-img-top" alt="beef_rouladen">
+            <img src="assets/images/beef_rouladen/beef_rouladen.png" class="card-img-top" alt="beef_rouladen">
             <div class="card-body">
               <h5 class="card-title">Beef Rouladen</h5>
               <p class="card-text">For something that looks and tastes as impressive as this beef rouladen, it's
                 actually one of the simplest stuffed meat recipes I know.</p>
-              <a href="#" class="btn btn-primary">Try it yourself</a>
+              <a href="beef_rouladen.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="list_item col-lg-4">
           <div class="card" style="width: 18rem;">
-            <img src="assets/images/beef_wellington.png" class="card-img-top" alt="beef_wellington">
+            <img src="assets/images/beef_wellington/beef_wellington.png" class="card-img-top" alt="beef_wellington">
             <div class="card-body">
               <h5 class="card-title">Beef Wellington</h5>
               <p class="card-text">This classic Beef Wellington recipe is perfect for any special occasion, from
                 holidays to anniversaries.</p>
-              <a href="#" class="btn btn-primary">Try it yourself</a>
+              <a href="beef_wellington.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
@@ -148,11 +153,14 @@
   <!-- Footer -->
   <div class="footer_section">
     <footer class="py-5 mt-5" style="background-color: #DF9755;">
-      <div class="col-lg-6 ">
-        <h2>About Us</h2>
-        <p>Leet Cook offers you recipes, advice and inspiration for better everyday cooking. From easy weeknight
-          dinners to holiday meals, our recipes have been tested and perfected to meet the needs of home cooks of all
-          levels.</p>
+      <div class="">
+        <div class="col-lg-5" style="padding-left: 15px; line-height: 0.75;">
+          <h2>Contact</h2>
+          <p>Via Email: taanhthaia2@gmail.com</p>
+          <p>Via Phone: 0329731566</p>
+        </div>
+      </div>
+
     </footer>
   </div>
 
