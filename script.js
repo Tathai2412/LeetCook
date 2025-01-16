@@ -1,4 +1,3 @@
-// Hàm áp dụng CSS vào phần tử với id 'list'
 
 function applyRowStyle() {
     const list = document.querySelector(".row-item");
@@ -10,14 +9,10 @@ function applyRowStyle() {
     }
 }
 
-// Hàm sắp xếp từ A đến Z
 function handleSort(value) {
-    // Chuyển đổi giá trị "true" hoặc "false" từ chuỗi sang boolean
     const isAscending = value === "true";
-    // Lấy tất cả các div có class 'list_item'
     const cardList = Array.from(document.querySelectorAll(".list_item"));
 
-    // Sắp xếp danh sách dựa trên nội dung của thẻ h5 có class 'card-title'
     cardList.sort((a, b) => {
         const titleA = a.querySelector(".card-title").innerText.trim().toUpperCase();
         const titleB = b.querySelector(".card-title").innerText.trim().toUpperCase();
@@ -29,10 +24,31 @@ function handleSort(value) {
         }
     });
 
-    // Gắn lại các phần tử đã sắp xếp vào container
     const container = document.querySelector(".row-item");
     cardList.forEach(card => container.appendChild(card));
 
 
     applyRowStyle();
+}
+
+function handleSearch(query) {
+    const searchQuery = query.trim().toLowerCase(); 
+    const items = document.querySelectorAll(".list_item");
+    let firstVisibleItem = null;
+
+    items.forEach(item => {
+        const title = item.querySelector(".card-title").innerText.toLowerCase();
+        if (searchQuery === "" || title.includes(searchQuery)) {
+            item.style.display = ""; 
+            if (!firstVisibleItem) {
+                firstVisibleItem = item; 
+            }
+        } else {
+            item.style.display = "none";
+        }
+    });
+
+    if (firstVisibleItem) {
+        firstVisibleItem.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
 }

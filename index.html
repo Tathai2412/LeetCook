@@ -11,7 +11,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 
-  <!-- <link rel="stylesheet" href="style.css"> -->
+
   <script src="script.js"></script>
   <title>Leet Cook</title>
   <link rel="icon" type="image/x-icon" href="assets/images/icon.png">
@@ -19,21 +19,24 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar" style="background-color: #DF9755;" data-bs-theme="white">
+  <nav class="navbar" style="background-color: #DF9755; position: fixed; top: 0; width: 100%; z-index: 100;"
+    data-bs-theme="white">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
         <img src="assets/images/icon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         Leet Cook
       </a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" onsubmit="return false;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput"
+          oninput="handleSearch(this.value)"></input>
+        <img src="assets/images/search_icon.png" alt="Search" width="36" height="36"
+          class="d-inline-block align-text-top">
       </form>
     </div>
   </nav>
 
   <!-- Welcome page -->
-  <div class="container" style="width: 100vw;">
+  <div class="container" style="width: 100vw; margin-top: 55px;">
     <div class="row">
       <div class="col-lg-4 align-self-center">
         <div class="left-content header-text ">
@@ -70,80 +73,92 @@
 
       <div class="row row-item"
         style="border: 5px solid #DF9755; border-radius: 10px; margin-top: 20px; padding: 10px;">
-
         <div class="list_item col-lg-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <img src="assets/images/roasted_chicken/roasted_chicken.png" class="card-img-top" alt="roasted_chicken">
             <div class="card-body">
               <h5 class="card-title">Roasted Chicken</h5>
-              <p class="card-text">Roasted chicken never fails to impress, but it's surprisingly simple to make! This
-                juicy roasted chicken recipe is perfect for beginner cooks and old pros alike.</p>
-              <a href="roasted_chicken.html" class="btn btn-primary">Try it yourself</a>
+              <p class="card-text">Roasted chicken never fails to impress, but it's surprisingly simple to make!</p>
+              <a href="pages/roasted_chicken.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
         <div class="list_item col-lg-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <img src="assets/images/chicken_soup/chicken_soup.png" class="card-img-top" alt="chicken_soup">
             <div class="card-body">
               <h5 class="card-title">Chicken Soup</h5>
-              <p class="card-text">This chicken noodle soup recipe can be on the table in just 40 minutes! Whether
-                you're feeling under the weather or you're just in need of a little comfort, this comforting soup will
-                warm you up from the inside out.</p>
-              <a href="chicken_soup.html" class="btn btn-primary">Try it yourself</a>
+              <p class="card-text">This chicken noodle soup recipe can be on the table in just 40 minutes!</p>
+              <a href="pages/chicken_soup.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
 
         <div class="list_item col-lg-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <img src="assets/images/egg_rolls/egg_rolls.png" class="card-img-top" alt="egg_rolls">
             <div class="card-body">
               <h5 class="card-title">Egg Rolls</h5>
               <p class="card-text">It's easier than you think to make restaurant-worthy egg rolls in the comfort of your
-                own kitchen. With this top-rated recipe, you'll learn how to make perfect egg rolls.</p>
-              <a href="egg_rolls.html" class="btn btn-primary">Try it yourself</a>
+                own kitchen.</p>
+              <a href="pages/egg_rolls.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
         <div class="list_item col-lg-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <img src="assets/images/egg_salad/egg_salad.png" class="card-img-top" alt="egg_salad">
             <div class="card-body">
               <h5 class="card-title">Egg Salad</h5>
               <p class="card-text">Make deli-worthy egg salad sandwiches at home with this top-rated egg salad recipe!
-                You'll come back to it again and again.</p>
-              <a href="egg_salad.html" class="btn btn-primary">Try it yourself</a>
+              </p>
+              <a href="pages/egg_salad.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
         <div class="list_item col-lg-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <img src="assets/images/beef_rouladen/beef_rouladen.png" class="card-img-top" alt="beef_rouladen">
             <div class="card-body">
               <h5 class="card-title">Beef Rouladen</h5>
               <p class="card-text">For something that looks and tastes as impressive as this beef rouladen, it's
-                actually one of the simplest stuffed meat recipes I know.</p>
-              <a href="beef_rouladen.html" class="btn btn-primary">Try it yourself</a>
+                actually so simple to make.</p>
+              <a href="pages/beef_rouladen.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
 
         <div class="list_item col-lg-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <img src="assets/images/beef_wellington/beef_wellington.png" class="card-img-top" alt="beef_wellington">
             <div class="card-body">
               <h5 class="card-title">Beef Wellington</h5>
               <p class="card-text">This classic Beef Wellington recipe is perfect for any special occasion, from
                 holidays to anniversaries.</p>
-              <a href="beef_wellington.html" class="btn btn-primary">Try it yourself</a>
+              <a href="pages/beef_wellington.html" class="btn btn-primary">Try it yourself</a>
             </div>
           </div>
         </div>
+
+        <style>
+          .card-img-top {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+
+          .card {
+            margin: auto;
+            margin-top: 10px;
+            width: 18rem;
+          }
+        </style>
       </div>
     </div>
 
